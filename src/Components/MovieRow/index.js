@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieRow.scss'
+import './index.scss'
 
 export default ({title, items}) => {
     return (
