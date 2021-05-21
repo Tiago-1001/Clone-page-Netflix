@@ -1,6 +1,10 @@
 import { getNodeText } from '@testing-library/dom';
 import React from 'react';
 import './index.scss'
+import InfoIcon from '@material-ui/icons/Info';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import AddIcon from '@material-ui/icons/Add';
+
 
 export default ({ item }) => {
     let firstDate = new Date(item.first_air_date);
@@ -25,10 +29,11 @@ export default ({ item }) => {
                     </div>
                     <div className="featured--description">{item.overview}</div>
                     <div className="featured--buttons">
-                        <a href={`/watch/${item.id}`} className="featured--watchButton">►Assistir</a>
-                        <a href={`/list/add/${item.id}`} className="featured--myListButton">+Minha Lista</a>
+                        <a href={`/watch/${item.id}`} className="featured--watchButton"><PlayArrowIcon style={{fontSize: 16, marginRight: 10, marginLeft: -1}}/>Assistir</a>
+                        <a className="featured--infoIcon"><InfoIcon style={{ fontSize: 22, color: "action"}}/> <p>Saiba mais</p></a>
+                        <a href={`/list/add/${item.id}`} className="featured--myListButton"><AddIcon style={{ fontSize: 22}}/> <p>Minha Lista</p></a>
                     </div>
-                    <div className="featured--genres"><strong>Gêneros: </strong>{genres.join(', ')}</div>
+                    <div className="featured--genres"><strong>Gêneros: </strong>{genres.join(' • ')}</div>
 
                 </div>
             </div>

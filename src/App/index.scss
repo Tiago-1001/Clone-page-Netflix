@@ -3,6 +3,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background-color: #111;
     color: #FFFFFF;
@@ -12,4 +13,30 @@ body {
 
 .lists {
     margin-top: -9.375rem;
+
+    @media (max-width: 760px) {
+        margin-top: -11rem;;
+    }
+}
+
+footer {
+    margin: 2rem;
+    text-align: center;
+
+    @media (max-width: 760px) {
+        display: none;
+    }
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

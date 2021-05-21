@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import './index.scss';
+
 import Tmdb from '../Tmdb';
 import MovieRow from '../Components/MovieRow/index.js';
-import './index.scss';
 import FeaturedMovie from '../Components';
 import Header from '../Components/Header/index';
+import Footer from '../Components/Footer/index';
 
 export default () => {
 
@@ -57,6 +59,14 @@ export default () => {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+        
+      <Footer />
+      
+      {movieList.length <= 0 &&
+      <div className="loading">
+        <img src="https://cdn.lowgif.com/small/0534e2a412eeb281-the-counterintuitive-tech-behind-netflix-s-worldwide.gif" alt="loading"></img>
+      </div>
+    }
     </div>
   )
 }

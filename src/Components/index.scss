@@ -1,11 +1,15 @@
-
 .featured {
     height: 100vh;
+
+    @media (max-width: 760px) {
+        height: 90vh;
+    }
 
     .featured--vertical {
         width: inherit;
         height: inherit;
-        background: linear-gradient(to top, #111 10%, transparent 90%);
+        background: linear-gradient(to top, #111 28%, transparent 68%);
+        
 
         .featured--horizontal {
             width: inherit;
@@ -14,11 +18,20 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 4.375rem 1.875rem 9.375rem;
+            padding: 18.375rem 1.875rem 9.375rem;
+
+            @media (max-width: 760px) {
+                background: transparent;
+            }
 
             .featured--name {
                 font-size: 3.75rem;
                 font-weight: bold;
+
+                @media (max-width: 760px) {
+                    font-size: 2.2rem;
+                    text-align: center;
+                }
             }
 
             .featured--info {
@@ -26,14 +39,20 @@
                 font-weight: bold;
                 margin-top: 0.9375rem;
 
-                .featured--points, .featured--year, .featured--seasons {
+                @media (max-width: 760px) {
+                    display: none;
+                }
+
+                .featured--points,
+                .featured--year,
+                .featured--seasons {
                     display: inline-block;
                     margin-right: 0.9375rem;
                 }
 
                 .featured--points {
                     color: #46d369;
-                    
+
                 }
             }
         }
@@ -43,41 +62,131 @@
             font-size: 1.25rem;
             color: #999;
             max-width: 40%;
+
+            @media (max-width: 760px) {
+                display: none;
+            }
         }
 
         .featured--buttons {
             margin-top: 0.9375rem;
 
-        }
+            @media (max-width: 760px) {
+                display: flex;
+                align-items: center;
+                position: absolute;
+            }
 
-        .featured--watchButton, .featured--myListButton {
-            display: inline-block;
-            font-size: 1.25rem;
-            font-weight: bold;
-            padding: 0.87rem 1.5625rem;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-right: 0.625rem;
-            margin-bottom: 0.87rem;
-            opacity: 1;
-            transition: 0.1s;
+            .featured--infoIcon {
+                display: none;
+               
 
-            &:hover {
-                opacity: 0.7;
+                @media (max-width: 760px) {
+                    display: inline;
+                    margin-right: 2rem;
+                    margin-top: 10px;
+                    position: relative;
+                    left: 165px;
+                    top: 81px;
+
+                    p {
+                        display: flex;
+                        font-size: 11px;
+                        padding: 0;
+                        margin-top: -2px;
+                        margin-left: -15px;
+                        color: rgb(182, 182, 182);
+                    }
+                }
+            }
+
+            .featured--watchButton,
+            .featured--myListButton {
+                display: inline-block;
+                font-size: 1.25rem;
+                font-weight: bold;
+                padding: 0.87rem 1.8rem;
+                border-radius: 5px;
+                text-decoration: none;
+                margin-right: 0.625rem;
+                margin-bottom: 0.87rem;
+                opacity: 1;
+                transition: 0.1s;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+
+            .featured--watchButton {
+                background-color: #fff;
+                color: #000;
+                padding: 0.80rem 1.95rem;
+
+                @media (max-width: 760px) {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 0;
+                    margin: auto;
+                    font-size: 1rem;
+                    height: 2rem;
+                    width: 6.25rem;
+                    border-radius: 2px;
+                    position: relative;
+                    left: 110px;
+                    top: 80px;
+                }
+            }
+
+            .featured--myListButton {
+                background-color: #333;
+                color: #fff;
+                display: inline-block;
+                padding: 0.83rem 1.3rem;
+                
+                p {
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+                }
+                
+                @media (max-width: 760px) {
+                    display: inline;
+                    margin-right: 2rem;
+                    margin-top: 10px;
+                    background: transparent;
+                    position: relative;
+                    right: 165px;
+                    top: 81px;
+
+                    p {
+                        display: flex;
+                        font-size: 10px;
+                        padding: 0;
+                        margin-top: -2px;
+                        margin-left: -15px;
+                        color: rgb(182, 182, 182);
+                    }
+                }
             }
         }
-        .featured--watchButton {
-            background-color: #fff;
-            color: #000;
-        }
-        .featured--myListButton {
-            background-color: #333;
-            color: #fff;
-        }
+
         .featured--genres {
             margin-top: 0.9375;
             font-size: 1.25rem;
             color: #999;
+
+            @media (max-width: 760px) {
+                font-size: 1rem;
+                color: #fff;
+                margin-top: 1rem;
+
+                strong {
+                    display: none;
+                    
+                }
+            }
         }
     }
 }
